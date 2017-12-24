@@ -1,4 +1,4 @@
-package com.company.lecturetwo.homework;
+package com.company.lecturetwo.homework.vo;
 
 public class NominatorVO {
 
@@ -16,7 +16,7 @@ public class NominatorVO {
     }
 
     //публичный метод nominate, который принимает объекты классов NomineeVO и AwardVO
-    public void nominate (NomineeVO nominee, AwardVO award) {
+    public void nominate(NomineeVO nominee, AwardVO award) {
 
         //вывод на консоль кому и какого размера выдана аварда
         System.out.println(nominee.getName() + " received " + award.getValue());
