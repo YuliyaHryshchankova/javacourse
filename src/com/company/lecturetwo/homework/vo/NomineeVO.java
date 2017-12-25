@@ -12,10 +12,19 @@ public class NomineeVO {
     //приватное строковое поле name. Все переменные в классе обычно private, если не надо другое.
     private String name;
     private double quantity;
+    //максимальное кол-во авард, которые может получить nominee
+    private int nomineeAwardQuantityLimit;
+    //сумма, которую может получить nominee
+    private double nomineeAwardAmountLimit;
 
-    //конструктор(используется для создания объектов данного класса NomineeVO)
+    //конструкторы(используется для создания объектов данного класса NomineeVO)
     public NomineeVO(String name) {
         this.name = name;
+    }
+    public NomineeVO(String name, int nomineeAwardQuantityLimit, double nomineeAwardAmountLimit) {
+        this.name = name;
+        this.nomineeAwardQuantityLimit = nomineeAwardQuantityLimit;
+        this.nomineeAwardAmountLimit = nomineeAwardAmountLimit;
     }
 
     //публичный метод receiveAward, принимающий объект класса Award
@@ -47,6 +56,7 @@ public class NomineeVO {
         System.out.println("-----------");
     }
 
+    //геттеры для quantity, name, nomineeAwardQuantityLimit и nomineeAwardAmountLimit. сеттеры для  nomineeAwardQuantityLimit и nomineeAwardAmountLimit.
     public double getQuantity() {
         return quantity;
     }
@@ -54,4 +64,21 @@ public class NomineeVO {
     public String getName() {
         return name;
     }
+
+    public int getNomineeAwardQuantityLimit() {
+        return nomineeAwardQuantityLimit;
+    }
+
+    public void setNomineeAwardQuantityLimit(int nomineeAwardQuantityLimit) {
+        this.nomineeAwardQuantityLimit = nomineeAwardQuantityLimit;
+    }
+
+    public double getNomineeAwardAmountLimit() {
+        return nomineeAwardAmountLimit;
+    }
+
+    public void setNomineeAwardAmountLimit(double nomineeAwardAmountLimit) {
+        this.nomineeAwardAmountLimit = nomineeAwardAmountLimit;
+    }
+
 }

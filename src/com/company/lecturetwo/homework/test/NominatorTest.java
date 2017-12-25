@@ -46,6 +46,7 @@ public class NominatorTest {
         //System.out.println("");
 
     }
+
     //статический метод раcчета quantity
     static double calculateQuantity(int value, int population) {
         //объявление переменных для расчета quantity
@@ -55,8 +56,8 @@ public class NominatorTest {
         //int population = 3;
         //все статические методы можно вызывать из класса, не создавая объекта, т.к. они принадлежат всему классу
         //Math.pow(z, 2) - возведение в квадрат объекта z
-        double a = (Math.pow(z, 2)*value*(1-value))/Math.pow(c, 2);
-        double quantity = a/(1+((a-1)/population));
+        double a = (Math.pow(z, 2) * value * (1 - value)) / Math.pow(c, 2);
+        double quantity = a / (1 + ((a - 1) / population));
         return quantity;
 
     }

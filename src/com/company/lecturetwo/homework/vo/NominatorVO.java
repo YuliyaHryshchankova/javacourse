@@ -9,10 +9,19 @@ public class NominatorVO {
 
     //приватное строкое поле name
     private String name;
+    //максимальное кол-во авард, которые может дать nominator
+    private int nominatorAwardQuantityLimit;
+    //сумма, которую может дать nominator
+    private double nominatorAwardAmountLimit;
 
-    //конструктор
+    //конструкторы
     public NominatorVO(String name) {
         this.name = name;
+    }
+    public NominatorVO(String name, int nominatorAwardQuantityLimit, double nominatorAwardAmountLimit) {
+        this.name = name;
+        this.nominatorAwardQuantityLimit = nominatorAwardQuantityLimit;
+        this.nominatorAwardAmountLimit = nominatorAwardAmountLimit;
     }
 
     //публичный метод nominate, который принимает объекты классов NomineeVO и AwardVO
@@ -25,4 +34,20 @@ public class NominatorVO {
         nominee.receiveAward(award);
     }
 
+    //геттеры и сеттеры для nomineeAwardQuantityLimit и nomineeAwardValueLimit
+    public int getNominatorAwardQuantityLimit() {
+        return nominatorAwardQuantityLimit;
+    }
+
+    public void setNominatorAwardQuantityLimit(int nominatorAwardQuantityLimit) {
+        this.nominatorAwardQuantityLimit = nominatorAwardQuantityLimit;
+    }
+
+    public double getNominatorAwardAmountLimit() {
+        return nominatorAwardAmountLimit;
+    }
+
+    public void setNominatorAwardAmountLimit(double nominatorAwardAmountLimit) {
+        this.nominatorAwardAmountLimit = this.nominatorAwardAmountLimit;
+    }
 }
