@@ -9,7 +9,7 @@ public class NomineeVO {
         System.out.println("Class NomineeVO initialized");
     }
 
-    //приватное строковое поле name. Все переменные в классе обычно private, если не надо другое.
+    //приватное строковое поле name. Все переменные в классе обычно private, если не дано другое.
     private String name;
     private double quantity;
     //максимальное кол-во авард, которые может получить nominee
