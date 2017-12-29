@@ -51,7 +51,6 @@ public class NominatorTest {
         System.out.println("Quantity of Alex's award3 is " + alexQuantity3);
 
         System.out.println("Quantity of Alex's award1 is " + (alexQuantity1 > alexQuantity2 ? "greater than" : (alexQuantity1 == alexQuantity2) ? "equal to" : "less than") + " quantity of Alex's award2.");
-        //System.out.println("");
 
     }
 
@@ -61,7 +60,7 @@ public class NominatorTest {
         Random random = new Random();
         //https://stackoverflow.com/questions/3680637/generate-a-random-double-in-a-range
         double c = C_MIN + (C_MAX - C_MIN) * random.nextDouble();
-        int z =  Z_MIN + random.nextInt(Z_MAX - Z_MIN);
+        int z = Z_MIN + random.nextInt(Z_MAX - Z_MIN);
         //все статические методы можно вызывать из класса, не создавая объекта, т.к. они принадлежат всему классу
         //Math.pow(z, 2) - возведение в квадрат объекта z
         double a = (Math.pow(z, 2) * value * (1 - value)) / Math.pow(c, 2);
