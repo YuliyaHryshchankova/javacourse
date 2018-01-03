@@ -30,7 +30,8 @@ public class Lecture4Test {
             counter++;
             limitName = "NominatorAwardQuantityLimit";
         }
-        switchCaseExample(counter, limitName);
+        //switchCaseExample(counter, limitName);
+        switchCaseExample5 (counter, limitName);
 
         System.out.println(nomineeName + nominee1.getName() + limitTypeQuantity + numberReceivedAwards + counter);
 
@@ -48,7 +49,8 @@ public class Lecture4Test {
         }
         while (sum < nominator.getNominatorAwardAmountLimit());
 
-        switchCaseExample2(sum, limitName);
+        //switchCaseExample2(sum, limitName);
+        switchCaseExample5 (sum, limitName);
         System.out.println(nomineeName + nominee1.getName() + limitTypeAmount + amountReceivedAwards + sum);
 
         //3.3 Nominator дает авадру Nominee пока не достигнет nomineeAwardQuantityLimit
@@ -58,7 +60,8 @@ public class Lecture4Test {
             limitName = "NomineeAwardQuantityLimit";
         }
 
-        switchCaseExample3(i, limitName);
+        //switchCaseExample3(i, limitName);
+        switchCaseExample5 (i, limitName);
         System.out.println(nomineeName + nominee1.getName() + limitTypeQuantity + numberReceivedAwards + i);
 
         //3.4 Nominator дает авадру Nominee пока не достигнет nomineeAwardAmountLimit
@@ -74,7 +77,8 @@ public class Lecture4Test {
             limitName = "NomineeAwardAmountLimit";
         }
 
-        switchCaseExample4(sum, limitName);
+        //switchCaseExample4(sum, limitName);
+        switchCaseExample5 (sum, limitName);
         System.out.println(nomineeName + nominee1.getName() + limitTypeAmount + amountReceivedAwards + sum);
 
     }
@@ -131,5 +135,30 @@ public class Lecture4Test {
             }
         }
 
+    }
+
+    //все case  в один ментод можно
+    public static void switchCaseExample5(int current, String limitname) {
+       switch (limitname) {
+            case "NominatorAwardQuantityLimit": {
+                System.out.println("NominatorAwardQuantityLimit: " + current);
+                break;
+            }
+           case "NominatorAwardAmountLimit": {
+               System.out.println("NominatorAwardAmountLimit: " + current);
+               break;
+           }
+           case "NomineeAwardQuantityLimit": {
+               System.out.println("NomineeAwardQuantityLimit: " + current);
+               break;
+           }
+           case "NomineeAwardAmountLimit": {
+               System.out.println("NomineeAwardAmountLimit: " + current);
+               break;
+           }
+            default: {
+                System.out.println("default");
+            }
+        }
     }
 }
