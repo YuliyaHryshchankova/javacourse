@@ -2,15 +2,13 @@ package com.company.lecturetwo.homework.vo;
 
 import com.company.lecturetwo.homework.util.NominationHelper;
 
-public class NominatorVO {
+public class NominatorVO extends PersonVO {
 
     //статический блок инициализации
     static {
         System.out.println("Class NominatorVO initialized");
     }
 
-    //приватное строкое поле name
-    private String name;
     //максимальное кол-во авард, которые может дать nominator
     private int nominatorAwardQuantityLimit;
     //сумма, которую может дать nominator
@@ -18,13 +16,20 @@ public class NominatorVO {
 
     //конструкторы
     public NominatorVO(String name) {
-        this.name = name;
+        super(name);
+        //this.name = name;
+
+        System.out.println("NominatorVO object created using constructor (String)");
+
     }
 
     public NominatorVO(String name, int nominatorAwardQuantityLimit, double nominatorAwardAmountLimit) {
-        this.name = name;
+        super(name);
+        //this.name = name;
         this.nominatorAwardQuantityLimit = nominatorAwardQuantityLimit;
         this.nominatorAwardAmountLimit = nominatorAwardAmountLimit;
+
+        System.out.println("NominatorVO object created using constructor (String, int, double)");
     }
 
     //публичный метод nominate, который принимает объекты классов NomineeVO и AwardVO
@@ -53,4 +58,11 @@ public class NominatorVO {
     public void setNominatorAwardAmountLimit(double nominatorAwardAmountLimit) {
         this.nominatorAwardAmountLimit = this.nominatorAwardAmountLimit;
     }
+
+    //переопределяем родительский метод getName (класс PersonVO)
+    @Override
+    public String getName() {
+        return super.getName();
+    }
+
 }

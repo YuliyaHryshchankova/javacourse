@@ -6,6 +6,10 @@ import com.company.lecturetwo.homework.vo.NomineeVO;
 
 import java.util.Random;
 
+/**
+ * utility class NominationHelper provides methods for nominating awards until one of the limit is reached
+ */
+
 public class NominationHelper {
 
     private final static String NOMINEE_NAME = "Nominee name is ";
@@ -15,7 +19,6 @@ public class NominationHelper {
     private final static String NUMBER_RECEIVED_AWARDS = " Number of received awards is ";
 
     //private static Random random = new Random();
-
 
     /**
      * публичный метод receiveAward, принимающий объект класса Award

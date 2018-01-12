@@ -2,15 +2,15 @@ package com.company.lecturetwo.homework.vo;
 
 import java.util.Random;
 
-public class NomineeVO {
+//extends - значит, что мы наследуем класс PersonVO, то есть используем поля
+public class NomineeVO extends PersonVO {
 
     //статический блок инициализации
     static {
         System.out.println("Class NomineeVO initialized");
     }
 
-    //приватное строковое поле name. Все переменные в классе обычно private, если не дано другое.
-    private String name;
+    //Все переменные в классе обычно private, если не дано другое.
     private double quantity;
     //максимальное кол-во авард, которые может получить nominee
     private int nomineeAwardQuantityLimit;
@@ -19,13 +19,22 @@ public class NomineeVO {
 
     //конструкторы(используется для создания объектов данного класса NomineeVO)
     public NomineeVO(String name) {
-        this.name = name;
+        //вызов конструктора родительского класса
+        super(name);
+        //this.name = name;
+
+        System.out.println("NomineeVO object created using constructor (String)");
+
     }
 
     public NomineeVO(String name, int nomineeAwardQuantityLimit, double nomineeAwardAmountLimit) {
-        this.name = name;
+        super(name);
+        //this.name = name;
         this.nomineeAwardQuantityLimit = nomineeAwardQuantityLimit;
         this.nomineeAwardAmountLimit = nomineeAwardAmountLimit;
+
+        System.out.println("NomineeVO object created using constructor (String, int, double)");
+
     }
 
 
@@ -61,10 +70,6 @@ public class NomineeVO {
     //геттеры для quantity, name, nomineeAwardQuantityLimit и nomineeAwardAmountLimit. сеттеры для  nomineeAwardQuantityLimit и nomineeAwardAmountLimit.
     public double getQuantity() {
         return quantity;
-    }
-
-    public String getName() {
-        return name;
     }
 
     public int getNomineeAwardQuantityLimit() {
