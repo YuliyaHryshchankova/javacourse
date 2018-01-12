@@ -11,7 +11,7 @@ public class AwardVO {
     private final int value;
     private double soli;
 
-    //конструктор
+    //конструкторы
     public AwardVO(final int value) {
         this.value = value;
     }
@@ -25,10 +25,12 @@ public class AwardVO {
     public int getValue() {
         return value;
     }
+
     //публичный геттер поля soli
     public double getSoli() {
         return soli;
     }
+
     //сеттер поля soli
     public void setSoli(double soli) {
         this.soli = soli;

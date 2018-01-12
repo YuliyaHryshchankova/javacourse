@@ -55,7 +55,7 @@ public class NominatorTest {
     }
 
     //статический метод раcчета quantity
-    static double calculateQuantity(int value, int population) {
+    private static double calculateQuantity(int value, int population) {
         //объявление переменных для расчета quantity
         Random random = new Random();
         //https://stackoverflow.com/questions/3680637/generate-a-random-double-in-a-range

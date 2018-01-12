@@ -21,14 +21,16 @@ public class NomineeVO {
     public NomineeVO(String name) {
         this.name = name;
     }
+
     public NomineeVO(String name, int nomineeAwardQuantityLimit, double nomineeAwardAmountLimit) {
         this.name = name;
         this.nomineeAwardQuantityLimit = nomineeAwardQuantityLimit;
         this.nomineeAwardAmountLimit = nomineeAwardAmountLimit;
     }
 
+
     //публичный метод receiveAward, принимающий объект класса Award
-    public void receiveAward(AwardVO award) {
+    /*public void receiveAward(AwardVO award) {
         double soli = award.getSoli();
         int value = award.getValue();
         //если задано soli, то пересчитываем value и выводим запись об этом
@@ -54,7 +56,7 @@ public class NomineeVO {
         }
 
         System.out.println("-----------");
-    }
+    }*/
 
     //геттеры для quantity, name, nomineeAwardQuantityLimit и nomineeAwardAmountLimit. сеттеры для  nomineeAwardQuantityLimit и nomineeAwardAmountLimit.
     public double getQuantity() {

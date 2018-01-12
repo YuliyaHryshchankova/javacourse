@@ -1,5 +1,7 @@
 package com.company.lecturetwo.homework.vo;
 
+import com.company.lecturetwo.homework.util.NominationHelper;
+
 public class NominatorVO {
 
     //статический блок инициализации
@@ -18,6 +20,7 @@ public class NominatorVO {
     public NominatorVO(String name) {
         this.name = name;
     }
+
     public NominatorVO(String name, int nominatorAwardQuantityLimit, double nominatorAwardAmountLimit) {
         this.name = name;
         this.nominatorAwardQuantityLimit = nominatorAwardQuantityLimit;
@@ -31,7 +34,7 @@ public class NominatorVO {
         System.out.println(nominee.getName() + " received " + award.getValue());
 
         //вызов метода receiveAward параметра nominee
-        nominee.receiveAward(award);
+        NominationHelper.receiveAward(award);
     }
 
     //геттеры и сеттеры для nomineeAwardQuantityLimit и nomineeAwardValueLimit
