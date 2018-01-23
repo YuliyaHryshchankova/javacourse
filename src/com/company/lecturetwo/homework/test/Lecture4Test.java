@@ -25,9 +25,7 @@ public class Lecture4Test {
          */
         NominationHelper.doNominateUntilNominatorAwardQuantityLimitReached(nominator, nominee1, award);
 
-       //System.out.println(award.getValue() + " Yuliya");
-
-        award.setValue(100);
+       award.setValue(100);
 
         /**
          * 3.2 Nominator дает авадру Nominee пока не достигнет nominatorAwardAmountLimit
