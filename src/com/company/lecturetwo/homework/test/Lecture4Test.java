@@ -5,11 +5,53 @@ import com.company.lecturetwo.homework.vo.AwardVO;
 import com.company.lecturetwo.homework.vo.NominatorVO;
 import com.company.lecturetwo.homework.vo.NomineeVO;
 
-import java.util.Random;
 
+/**
+ *
+ */
 public class Lecture4Test {
 
+    /**
+     * @param args
+     */
     public static void main(String[] args) {
+
+        NominatorVO nominator = new NominatorVO("Tom", 5, 500);
+        NomineeVO nominee1 = new NomineeVO("Dave", 5, 500);
+        AwardVO award = new AwardVO(100);
+
+        /**
+         * 3.1 Nominator дает авадру Nominee пока не достигнет nominatorAwardQuantityLimit
+         */
+        NominationHelper.doNominateUntilNominatorAwardQuantityLimitReached(nominator, nominee1, award);
+
+       //System.out.println(award.getValue() + " Yuliya");
+
+        award.setValue(100);
+
+        /**
+         * 3.2 Nominator дает авадру Nominee пока не достигнет nominatorAwardAmountLimit
+         */
+        NominationHelper.doNominateUntilNominatorAwardAmountLimitReached(nominator, nominee1, award);
+
+        award.setValue(100);
+
+        /**
+         * 3.3 Nominator дает авадру Nominee пока не достигнет nomineeAwardQuantityLimit
+         */
+        NominationHelper.doNominateUntilNomineeAwardQuantityLimitReached(nominator, nominee1, award);
+
+        award.setValue(100);
+
+        /**
+         * 3.4 Nominator дает авадру Nominee пока не достигнет nomineeAwardAmountLimit
+         */
+       NominationHelper.doNominateUntilNomineeAwardAmountLimitReached(nominator, nominee1, award);
+
+    }
+
+}
+    /*public static void mainOLD(String[] args) {
 
         NominatorVO nominator = new NominatorVO("Tom", 5, 500);
         NomineeVO nominee1 = new NomineeVO("Dave", 5, 500);
@@ -18,7 +60,7 @@ public class Lecture4Test {
 
         //3.1 Nominator дает авадру Nominee пока не достигнет nominatorAwardQuantityLimit
 
-        NominationHelper.doNominateUntilNominatorAwardQuantityLimitReached(nominator, nominee1);
+        //NominationHelper.doNominateUntilNominatorAwardQuantityLimitReached(nominator, nominee1);
 
         /*int counter = 0;
         while (counter < nominator.getNominatorAwardQuantityLimit()) {
@@ -34,7 +76,7 @@ public class Lecture4Test {
 
         //3.2 Nominator дает авадру Nominee пока не достигнет nominatorAwardAmountLimit
 
-        NominationHelper.doNominateUntilNominatorAwardAmountLimitReached(nominator, nominee1);
+        //NominationHelper.doNominateUntilNominatorAwardAmountLimitReached(nominator, nominee1);
 
        /*int sum = 0;
         do {
@@ -55,7 +97,7 @@ public class Lecture4Test {
 
         //3.3 Nominator дает авадру Nominee пока не достигнет nomineeAwardQuantityLimit
 
-        NominationHelper.doNominateUntilNomineeAwardQuantityLimitReached(nominator, nominee1);
+        //NominationHelper.doNominateUntilNomineeAwardQuantityLimitReached(nominator, nominee1);
 
         /*int i;
         for (i = 0; i < nominee1.getNomineeAwardQuantityLimit(); i++) {
@@ -70,7 +112,7 @@ public class Lecture4Test {
         //3.4 Nominator дает авадру Nominee пока не достигнет nomineeAwardAmountLimit
         //объявление нет, т.к выше объявили уже
 
-        NominationHelper.doNominateUntilNomineeAwardAmountLimitReached(nominator, nominee1);
+        //NominationHelper.doNominateUntilNomineeAwardAmountLimitReached(nominator, nominee1);
 
         /*int sum = 0;
         int value = 100 + random.nextInt(50);
@@ -85,9 +127,9 @@ public class Lecture4Test {
 
         //switchCaseExample4(sum, limitName);
         switchCaseExample5 (sum, limitName);
-        System.out.println(NOMINEE_NAME + nominee1.getName() + LIMIT_TYPE_AMOUNT + AMOUNT_RECEIVED_AWARDS + sum);*/
+        System.out.println(NOMINEE_NAME + nominee1.getName() + LIMIT_TYPE_AMOUNT + AMOUNT_RECEIVED_AWARDS + sum);
 
-    }
+    }*/
 
     /*  switchCaseExample();
     public static void switchCaseExample(int current, String limitname) {
@@ -144,7 +186,7 @@ public class Lecture4Test {
     }*/
 
     //все case  в один метод можно
-    public static void switchCaseExample5(int current, String limitname) {
+    /*public static void switchCaseExample5(int current, String limitname) {
         switch (limitname) {
             case "NominatorAwardQuantityLimit": {
                 System.out.println("NominatorAwardQuantityLimit: " + current);
@@ -166,5 +208,5 @@ public class Lecture4Test {
                 System.out.println("default");
             }
         }
-    }
-}
+    }*/
+

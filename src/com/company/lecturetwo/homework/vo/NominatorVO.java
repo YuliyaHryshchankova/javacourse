@@ -1,7 +1,8 @@
 package com.company.lecturetwo.homework.vo;
 
-import com.company.lecturetwo.homework.util.NominationHelper;
-
+/**
+ *
+ */
 public class NominatorVO extends PersonVO {
 
     //статический блок инициализации
@@ -9,12 +10,10 @@ public class NominatorVO extends PersonVO {
         System.out.println("Class NominatorVO initialized");
     }
 
-    //максимальное кол-во авард, которые может дать nominator
-    private int nominatorAwardQuantityLimit;
-    //сумма, которую может дать nominator
-    private double nominatorAwardAmountLimit;
-
-    //конструкторы
+    /**
+     * конструкторы
+     * @param name
+     */
     public NominatorVO(String name) {
         super(name);
         //this.name = name;
@@ -23,46 +22,28 @@ public class NominatorVO extends PersonVO {
 
     }
 
-    public NominatorVO(String name, int nominatorAwardQuantityLimit, double nominatorAwardAmountLimit) {
+    /**
+     *
+     * @param name
+     * @param awardQuantityLimit
+     * @param awardAmountLimit
+     */
+    public NominatorVO(String name, int awardQuantityLimit, double awardAmountLimit) {
         super(name);
         //this.name = name;
-        this.nominatorAwardQuantityLimit = nominatorAwardQuantityLimit;
-        this.nominatorAwardAmountLimit = nominatorAwardAmountLimit;
+        this.awardQuantityLimit = awardQuantityLimit;
+        this.awardAmountLimit = awardAmountLimit;
 
         System.out.println("NominatorVO object created using constructor (String, int, double)");
     }
 
-    //публичный метод nominate, который принимает объекты классов NomineeVO и AwardVO
-    public void nominate(NomineeVO nominee, AwardVO award) {
-
-        //вывод на консоль кому и какого размера выдана аварда
-        System.out.println(nominee.getName() + " received " + award.getValue());
-
-        //вызов метода receiveAward параметра nominee
-        NominationHelper.receiveAward(award);
-    }
-
-    //геттеры и сеттеры для nomineeAwardQuantityLimit и nomineeAwardValueLimit
-    public int getNominatorAwardQuantityLimit() {
-        return nominatorAwardQuantityLimit;
-    }
-
-    public void setNominatorAwardQuantityLimit(int nominatorAwardQuantityLimit) {
-        this.nominatorAwardQuantityLimit = nominatorAwardQuantityLimit;
-    }
-
-    public double getNominatorAwardAmountLimit() {
-        return nominatorAwardAmountLimit;
-    }
-
-    public void setNominatorAwardAmountLimit(double nominatorAwardAmountLimit) {
-        this.nominatorAwardAmountLimit = this.nominatorAwardAmountLimit;
-    }
-
-    //переопределяем родительский метод getName (класс PersonVO)
+    /**
+     * переопределяем родительский метод getName (класс PersonVO)
+      * @return
+     */
     @Override
     public String getName() {
-        return super.getName();
+        return super.getName() + " nominator";
     }
 
 }
