@@ -86,7 +86,8 @@ public class NominationHelper {
         award.setValue(newAwardValue);
         //AwardVO newAward = new AwardVO(newAwardValue);
         //award.setValue(499);
-        while (counter < nominator.getAwardQuantityLimit()) {
+        while (!nominator.isLimitReached(counter, nominator.getAwardQuantityLimit())) {
+            //while (counter < nominator.getAwardQuantityLimit()) {
             //nominator.nominate(nominee1, new AwardVO(80);
             //nominate(nominee, new AwardVO(100 + random.nextInt(50)));
             nominate(nominee, award);
@@ -128,7 +129,8 @@ public class NominationHelper {
             //sum += value;
             limitName = "NominatorAwardAmountLimit";
         }
-        while (sum < nominator.getAwardAmountLimit());
+        //while (sum < nominator.getAwardAmountLimit());
+        while (!nominator.isLimitReached(sum, nominator.getAwardAmountLimit()));
 
         switchCaseExample5(sum, limitName);
 
@@ -144,7 +146,8 @@ public class NominationHelper {
         int i;
         int newAwardValue = award.getValue() + random.nextInt(50);
         award.setValue(newAwardValue);
-        for (i = 0; i < nominee.getAwardQuantityLimit(); i++) {
+        //for (i = 0; i < nominee.getAwardQuantityLimit(); i++) {
+        for (i = 0; !nominee.isLimitReached(i, nominee.getAwardQuantityLimit()); i++) {
             //nominate(nominee, new AwardVO(100 + random.nextInt(50)));
             nominate(nominee, award);
             limitName = "NomineeAwardQuantityLimit";
@@ -165,7 +168,8 @@ public class NominationHelper {
         int value = 100 + random.nextInt(50);
         int newAwardValue = award.getValue() + random.nextInt(50);
         award.setValue(newAwardValue);
-        while (sum < nominee.getAwardAmountLimit()) {
+        //while (sum < nominee.getAwardAmountLimit()) {
+        while (!nominee.isLimitReached(sum, nominee.getAwardAmountLimit())) {
             nominate(nominee, award);
             //nominate(nominee, new AwardVO(100 + random.nextInt(50)));
             if (sum + value > nominee.getAwardAmountLimit()) {

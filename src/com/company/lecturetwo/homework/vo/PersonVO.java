@@ -1,9 +1,11 @@
 package com.company.lecturetwo.homework.vo;
 
+import com.company.lecturetwo.homework.check.OperationsWithLimit;
+
 /**
  * Parent class PersonVO
  */
-public class PersonVO {
+public abstract class PersonVO implements OperationsWithLimit {
 
     /**
      *
@@ -19,7 +21,7 @@ public class PersonVO {
     /**
      * переопределяем дефолтный конструктор и вызываем из него параметризированный, т.е. создается Person с именем Default
      */
-     public PersonVO() {
+    public PersonVO() {
         this("Default");
 
         System.out.println("PersonVO object created using default constructor");
@@ -27,6 +29,7 @@ public class PersonVO {
 
     /**
      * constructor
+     *
      * @param name
      */
     public PersonVO(String name) {
@@ -37,7 +40,18 @@ public class PersonVO {
     }
 
     /**
+     * @param currentValue
+     * @param limit
+     * @return
+     */
+    public boolean isLimitReached(double currentValue, double limit) {
+        return currentValue >= limit;
+
+    }
+
+    /**
      * геттеры и сеттеры для awardQuantityLimit, awardValueLimit, name
+     *
      * @return
      */
     public String getName() {
