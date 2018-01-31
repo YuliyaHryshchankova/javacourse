@@ -12,6 +12,7 @@ public class NominatorVO extends PersonVO {
 
     /**
      * конструкторы
+     *
      * @param name
      */
     public NominatorVO(String name) {
@@ -23,7 +24,6 @@ public class NominatorVO extends PersonVO {
     }
 
     /**
-     *
      * @param name
      * @param awardQuantityLimit
      * @param awardAmountLimit
@@ -38,8 +38,16 @@ public class NominatorVO extends PersonVO {
     }
 
     /**
+     * Method from interface
+     */
+    public boolean isLimitReached(double currentValue, double limit) {
+        return currentValue >= limit;
+    }
+
+    /**
      * переопределяем родительский метод getName (класс PersonVO)
-      * @return
+     *
+     * @return
      */
     @Override
     public String getName() {

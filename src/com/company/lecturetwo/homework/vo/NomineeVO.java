@@ -18,7 +18,6 @@ public class NomineeVO extends PersonVO {
     //Все переменные в классе обычно private, если не дано другое.
 
     /**
-     *
      * @param name
      */
     //конструкторы(используется для создания объектов данного класса NomineeVO)
@@ -32,7 +31,6 @@ public class NomineeVO extends PersonVO {
     }
 
     /**
-     *
      * @param name
      * @param awardQuantityLimit
      * @param awardAmountLimit
@@ -48,7 +46,13 @@ public class NomineeVO extends PersonVO {
     }
 
     /**
-     *
+     * Method from interface
+     */
+    public boolean isLimitReached(double currentValue, double limit) {
+        return currentValue >= limit;
+    }
+
+    /**
      * @return
      */
     //геттеры для quantity

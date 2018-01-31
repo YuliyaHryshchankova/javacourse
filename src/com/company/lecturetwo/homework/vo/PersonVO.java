@@ -40,16 +40,6 @@ public abstract class PersonVO implements OperationsWithLimit {
     }
 
     /**
-     * @param currentValue
-     * @param limit
-     * @return
-     */
-    public boolean isLimitReached(double currentValue, double limit) {
-        return currentValue >= limit;
-
-    }
-
-    /**
      * геттеры и сеттеры для awardQuantityLimit, awardValueLimit, name
      *
      * @return
