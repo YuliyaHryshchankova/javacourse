@@ -41,6 +41,7 @@ public class NominatorVO extends PersonVO {
      * Method from interface
      */
     public boolean isLimitReached(double currentValue, double limit) {
+        System.out.println("Executed from Nominator");
         return currentValue >= limit;
     }
 

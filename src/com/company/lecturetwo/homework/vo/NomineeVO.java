@@ -49,8 +49,10 @@ public class NomineeVO extends PersonVO {
      * Method from interface
      */
     public boolean isLimitReached(double currentValue, double limit) {
+        System.out.println("Executed from Nominee");
         return currentValue >= limit;
-    }
+
+      }
 
     /**
      * @return
