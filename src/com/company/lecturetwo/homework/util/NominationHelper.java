@@ -3,6 +3,7 @@ package com.company.lecturetwo.homework.util;
 import com.company.lecturetwo.homework.vo.AwardVO;
 import com.company.lecturetwo.homework.vo.NominatorVO;
 import com.company.lecturetwo.homework.vo.NomineeVO;
+import com.company.lecturetwo.homework.vo.PersonVO;
 
 import java.util.Random;
 
@@ -34,7 +35,7 @@ public class NominationHelper {
      * @param nominee
      * @param award
      */
-    public static void nominate(NomineeVO nominee, AwardVO award) {
+    public static void nominate(PersonVO nominee, AwardVO award) {
 
         //вывод на консоль кому и какого размера выдана аварда
         System.out.println(nominee.getName() + " received " + award.getValue());
@@ -78,8 +79,12 @@ public class NominationHelper {
 
     /**
      * 3.1 Nominator дает авадру Nominee пока не достигнет nominatorAwardQuantityLimit
+     *
+     * @param nominator - nominator of the award
+     * @param nominee   - nominee of the award
+     * @param award     - award for nomination
      */
-    public static void doNominateUntilNominatorAwardQuantityLimitReached(NominatorVO nominator, NomineeVO nominee, AwardVO award) {
+    public static void doNominateUntilNominatorAwardQuantityLimitReached(PersonVO nominator, PersonVO nominee, AwardVO award) {
         Random random = new Random();
         int counter = 0;
         int newAwardValue = award.getValue() + random.nextInt(50);
@@ -101,14 +106,14 @@ public class NominationHelper {
 
     }
 
-
     /**
      * 3.2 Nominator дает авадру Nominee пока не достигнет nominatorAwardAmountLimit
      *
-     * @param nominator
-     * @param nominee
+     * @param nominator -  nominator of the award
+     * @param nominee   - nominee of the award
+     * @param award     - award for nomination
      */
-    public static void doNominateUntilNominatorAwardAmountLimitReached(NominatorVO nominator, NomineeVO nominee, AwardVO award) {
+    public static void doNominateUntilNominatorAwardAmountLimitReached(PersonVO nominator, PersonVO nominee, AwardVO award) {
 
         Random random = new Random();
 
@@ -137,11 +142,14 @@ public class NominationHelper {
         System.out.println(NOMINEE_NAME + nominee.getName() + LIMIT_TYPE_AMOUNT + AMOUNT_RECEIVED_AWARDS + sum);
     }
 
-
     /**
      * 3.3 Nominator дает авадру Nominee пока не достигнет nomineeAwardQuantityLimit
+     *
+     * @param nominator - nominator of the award
+     * @param nominee   - nominee of the award
+     * @param award     - award for nomination
      */
-    public static void doNominateUntilNomineeAwardQuantityLimitReached(NominatorVO nominator, NomineeVO nominee, AwardVO award) {
+    public static void doNominateUntilNomineeAwardQuantityLimitReached(PersonVO nominator, PersonVO nominee, AwardVO award) {
         Random random = new Random();
         int i;
         int newAwardValue = award.getValue() + random.nextInt(50);
@@ -161,8 +169,12 @@ public class NominationHelper {
 
     /**
      * 3.4 Nominator дает авадру Nominee пока не достигнет nomineeAwardAmountLimit
+     *
+     * @param nominator - nominator of the award
+     * @param nominee   - nominee of the award
+     * @param award     - award for nomination
      */
-    public static void doNominateUntilNomineeAwardAmountLimitReached(NominatorVO nominator, NomineeVO nominee, AwardVO award) {
+    public static void doNominateUntilNomineeAwardAmountLimitReached(PersonVO nominator, PersonVO nominee, AwardVO award) {
         Random random = new Random();
         int sum = 0;
         int value = 100 + random.nextInt(50);
@@ -185,7 +197,17 @@ public class NominationHelper {
     }
 
     /**
-     * static method to calculate quantity
+     * Method to calculate quantity parameter for each award without soli of each recipients using the formula:
+     * quantity = ((Z^2*(P)*(1-P))/(C^2)) / (1 + ((((Z^2*(P)*(1-P ))/(C^2))-1)/population))
+     * where:
+     * C = a random decimal i.e. 5% = 0.05. We use this range: -2...2
+     * population = total count of employee's awards without soli
+     * Z = a random whole number i.e. 3. We use this range: -5...5
+     * P = award value;
+     *
+     * @param value      - chosen award value for nomination
+     * @param population - total count of employee's awards without soli
+     * @return quantity parameter
      */
     public static double calculateQuantity(int value, int population) {
         //объявление переменных для расчета quantity
@@ -203,6 +225,9 @@ public class NominationHelper {
 
     /**
      * Switch case example
+     *
+     * @param current
+     * @param limitname
      */
     public static void switchCaseExample5(int current, String limitname) {
         switch (limitname) {

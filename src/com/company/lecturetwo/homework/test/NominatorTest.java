@@ -4,6 +4,7 @@ import com.company.lecturetwo.homework.util.NominationHelper;
 import com.company.lecturetwo.homework.vo.AwardVO;
 import com.company.lecturetwo.homework.vo.NominatorVO;
 import com.company.lecturetwo.homework.vo.NomineeVO;
+import com.company.lecturetwo.homework.vo.PersonVO;
 
 
 /**
@@ -15,10 +16,10 @@ public class NominatorTest {
      * @param args
      */
     public static void main(String[] args) {
-        NominatorVO nominator = new NominatorVO("Tom");
-        NomineeVO nominee1 = new NomineeVO("Dave");
-        NomineeVO nominee2 = new NomineeVO("Alex");
-        NomineeVO nominee3 = new NomineeVO("Kris");
+        PersonVO nominator = new NominatorVO("Tom");
+        PersonVO nominee1 = new NomineeVO("Dave");
+        PersonVO nominee2 = new NomineeVO("Alex");
+        PersonVO nominee3 = new NomineeVO("Kris");
 
         // ------ Dave awards
 

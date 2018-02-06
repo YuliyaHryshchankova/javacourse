@@ -4,6 +4,7 @@ import com.company.lecturetwo.homework.util.NominationHelper;
 import com.company.lecturetwo.homework.vo.AwardVO;
 import com.company.lecturetwo.homework.vo.NominatorVO;
 import com.company.lecturetwo.homework.vo.NomineeVO;
+import com.company.lecturetwo.homework.vo.PersonVO;
 
 
 /**
@@ -16,14 +17,14 @@ public class Lecture4Test {
      */
     public static void main(String[] args) {
 
-        NominatorVO nominator = new NominatorVO("Tom", 5, 500);
-        NomineeVO nominee1 = new NomineeVO("Dave", 5, 500);
+        PersonVO nominator = new NominatorVO("Tom", 5, 500);
+        PersonVO nominee1 = new NomineeVO("Dave", 5, 500);
         AwardVO award = new AwardVO(100);
 
         /**
          * 3.1 Nominator дает авадру Nominee пока не достигнет nominatorAwardQuantityLimit
          */
-        NominationHelper.doNominateUntilNominatorAwardQuantityLimitReached(nominator, nominee1, award);
+       NominationHelper.doNominateUntilNominatorAwardQuantityLimitReached(nominator, nominee1, award);
 
        award.setValue(100);
 

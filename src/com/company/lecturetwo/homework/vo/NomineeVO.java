@@ -62,5 +62,13 @@ public class NomineeVO extends PersonVO {
         return quantity;
     }
 
+    /**
+     *
+     * @return
+     */
+    @Override
+    public String getName() {
+        return super.getName() + " nominee";
+    }
 
 }
