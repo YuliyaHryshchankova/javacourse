@@ -52,7 +52,7 @@ public class NominatorVO extends PersonVO {
      */
     @Override
     public String getName() {
-        return super.getName() + " nominator";
+        return super.getName() + " (nominator)";
     }
 
 }

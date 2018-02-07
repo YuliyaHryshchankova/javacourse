@@ -14,11 +14,12 @@ public class AwardVO {
      *
      */
     //приватное финальное целочисленное поле value
-    private  int value;
+    private int value;
     private double soli;
+    private Enum type;
+    private long id;
 
     /**
-     *
      * @param value
      */
     //конструкторы
@@ -27,7 +28,6 @@ public class AwardVO {
     }
 
     /**
-     *
      * @param value
      * @param soli
      */
@@ -37,7 +37,19 @@ public class AwardVO {
     }
 
     /**
+     * Constructor - creates an award with the specified value, type and id.
      *
+     * @param value - award value
+     * @param type  - award type from the fixed list
+     * @param id    -  award id
+     */
+    public AwardVO(int value, Enum type, long id) {
+        this.value = value;
+        this.type = type;
+        this.id = id;
+    }
+
+    /**
      * @return
      */
     //публичный геттер поля value
@@ -50,7 +62,6 @@ public class AwardVO {
     }
 
     /**
-     *
      * @return
      */
     //публичный геттер поля soli
@@ -59,7 +70,6 @@ public class AwardVO {
     }
 
     /**
-     *
      * @param soli
      */
     //сеттер поля soli
@@ -68,5 +78,20 @@ public class AwardVO {
     }
 
 
+    public void setType(Enum type) {
+        this.type = type;
+    }
+
+    public Enum getType() {
+        return type;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
 
 }

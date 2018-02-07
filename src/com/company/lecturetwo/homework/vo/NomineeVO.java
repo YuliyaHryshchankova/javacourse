@@ -68,7 +68,7 @@ public class NomineeVO extends PersonVO {
      */
     @Override
     public String getName() {
-        return super.getName() + " nominee";
+        return super.getName() + " (nominee)";
     }
 
 }

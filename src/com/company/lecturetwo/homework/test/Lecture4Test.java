@@ -18,7 +18,16 @@ public class Lecture4Test {
     public static void main(String[] args) {
 
         PersonVO nominator = new NominatorVO("Tom", 5, 500);
+        //calling method printPersonName of PersonVO for nominator
+        nominator.printPersonName();
+        //calling overloaded printPersonName method of PersonVO for nominator
+        nominator.printPersonName(true);
+        //nominator.printPersonName(boolean.class.printLength);
         PersonVO nominee1 = new NomineeVO("Dave", 5, 500);
+        //calling method printPersonName of PersonVO for nominee
+        nominee1.printPersonName();
+        //calling overloaded printPersonName method of PersonVO for nominee
+        nominee1.printPersonName(false);
         AwardVO award = new AwardVO(100);
 
         /**
