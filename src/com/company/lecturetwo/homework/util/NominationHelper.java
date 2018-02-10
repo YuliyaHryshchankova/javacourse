@@ -5,6 +5,7 @@ import com.company.lecturetwo.homework.vo.NominatorVO;
 import com.company.lecturetwo.homework.vo.NomineeVO;
 import com.company.lecturetwo.homework.vo.PersonVO;
 
+import java.util.List;
 import java.util.Random;
 
 /**
@@ -250,6 +251,16 @@ public class NominationHelper {
             default: {
                 System.out.println("default");
             }
+        }
+    }
+
+    public static void printAwards(List<AwardVO> awards, String type) {
+        //перебираем все объекты типа AwardVO из листа awards. award - промежуточная переменная для обращения к текущему объекту
+        for (AwardVO award : awards) {
+            if (award.getType().equals(type)) {
+                System.out.println(award);
+            }
+
         }
     }
 
