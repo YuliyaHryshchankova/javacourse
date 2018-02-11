@@ -1,5 +1,6 @@
 package com.company.lecturetwo.homework.test;
 
+import com.company.lecturetwo.homework.exc.AwardException;
 import com.company.lecturetwo.homework.util.NominationHelper;
 import com.company.lecturetwo.homework.vo.AwardVO;
 
@@ -22,7 +23,7 @@ public class ArrayListAwardsTest {
         //list of awards
         List<AwardVO> awardList = new ArrayList<>();
 
-        //populationg list of awards
+        //populating list of awards
         awardList.add(new AwardVO(50, AwardVO.TYPE_CASH, 1));
         awardList.add(new AwardVO(100, AwardVO.TYPE_CASH, 2));
         awardList.add(new AwardVO(150, AwardVO.TYPE_NON_CASH, 3));
@@ -70,6 +71,21 @@ public class ArrayListAwardsTest {
         awardTypes.add(AwardVO.TYPE_THANK_YOU);
 
         System.out.println("Set of award types: " + awardTypes);
+
+        //iterates list of awards and compare 0th element. Prints a message in case awards are equal.
+        for (AwardVO award : awardList) {
+            if (award.equals(awardList.get(0))) {
+                System.out.println(award + " equals 1st award");
+            }
+        }
+
+        //attempt to call equals with not supported object type. Throws exception.
+        //try-catch block to handle exception. Program doesn;t stop executing in case exception thrown
+        try {
+            awardList.get(0).equals("wide");
+        } catch (AwardException e) {
+            e.printStackTrace();
+        }
 
     }
 

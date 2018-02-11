@@ -1,5 +1,7 @@
 package com.company.lecturetwo.homework.vo;
 
+import com.company.lecturetwo.homework.exc.AwardException;
+
 /**
  *
  */
@@ -126,6 +128,10 @@ public class AwardVO {
      */
     @Override
     public boolean equals(Object obj) {
+        //instanceof - оператор проверки объекта на принадлежность класса
+        if (!( obj instanceof AwardVO)) {
+            throw new AwardException("AwardVO objects supported only");
+        }
         return this.type.equals(((AwardVO) obj).getType()) && this.value == ((AwardVO) obj).getValue();
     }
 }
