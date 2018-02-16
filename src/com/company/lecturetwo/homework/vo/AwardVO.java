@@ -2,6 +2,8 @@ package com.company.lecturetwo.homework.vo;
 
 import com.company.lecturetwo.homework.exc.AwardException;
 
+import java.util.Objects;
+
 /**
  *
  */
@@ -105,22 +107,23 @@ public class AwardVO {
      *
      * @return string representation of AwardVO. E.g. Award[id: 1, type: cash, value: 50]
      */
-    @Override
-    public String toString() {
-        return "Award[id: " + id + ", type: " + type + ", value: " + value + "]";
-    }
+     @Override
+        public String toString() {
+       return "Award[id: " + id + ", type: " + type + ", value: " + value + "]";
+     }
 
     /**
      * overrides standard hashCode to return award id
      *
      * @return award id
      */
-    @Override
-    public int hashCode() {
-        return id;
-    }
+     @Override
+     public int hashCode() {
+     return id;
+     }
 
-    /**
+
+     /**
      * Overrides Object's equals method to compare awards by type and value
      *
      * @param obj - AwardVO to compare with
@@ -129,9 +132,20 @@ public class AwardVO {
     @Override
     public boolean equals(Object obj) {
         //instanceof - оператор проверки объекта на принадлежность класса
-        if (!( obj instanceof AwardVO)) {
+      /*  if (!( obj instanceof AwardVO)) {
             throw new AwardException("AwardVO objects supported only");
-        }
+        }*/
         return this.type.equals(((AwardVO) obj).getType()) && this.value == ((AwardVO) obj).getValue();
     }
+
+    //    @Override
+//    public boolean equals(Object o) {
+//        if (this == o) return true;
+//        if (!(o instanceof AwardVO)) return false;
+//        AwardVO awardVO = (AwardVO) o;
+//        return getValue() == awardVO.getValue() &&
+//                Double.compare(awardVO.getSoli(), getSoli()) == 0 &&
+//                getId() == awardVO.getId() &&
+//                Objects.equals(getType(), awardVO.getType());
+//    }
 }

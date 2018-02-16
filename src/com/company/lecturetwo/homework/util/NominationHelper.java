@@ -1,5 +1,6 @@
 package com.company.lecturetwo.homework.util;
 
+import com.company.lecturetwo.homework.exc.AwardException;
 import com.company.lecturetwo.homework.vo.AwardVO;
 import com.company.lecturetwo.homework.vo.NominatorVO;
 import com.company.lecturetwo.homework.vo.NomineeVO;
@@ -249,12 +250,17 @@ public class NominationHelper {
                 break;
             }
             default: {
+                //throw
                 System.out.println("default");
             }
         }
     }
 
-    public static void printAwards(List<AwardVO> awards, String type) {
+    public static void printAwards(List<AwardVO> awards, String type) throws AwardException {
+        // if award type is not TYPE_CASH or TYPE_NON_CASH or TYPE_THANK_YOU, throw exception
+        if (!type.equals(AwardVO.TYPE_CASH)&&!type.equals(AwardVO.TYPE_NON_CASH)&&!type.equals(AwardVO.TYPE_THANK_YOU)){
+           throw new AwardException("Not valid type");
+       }
         //перебираем все объекты типа AwardVO из листа awards. award - промежуточная переменная для обращения к текущему объекту
         for (AwardVO award : awards) {
             if (award.getType().equals(type)) {
